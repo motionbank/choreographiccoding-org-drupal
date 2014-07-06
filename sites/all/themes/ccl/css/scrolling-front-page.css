@@ -28,39 +28,43 @@
 }
 /* line 32, ../sass/scrolling-front-page.scss */
 #header .block-menu ul li a {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.09em;
   display: block;
 }
-/* line 37, ../sass/scrolling-front-page.scss */
+/* line 41, ../sass/scrolling-front-page.scss */
 #header .block-menu ul li.last {
   margin-right: 0em;
 }
 
-/* line 44, ../sass/scrolling-front-page.scss */
+/* line 48, ../sass/scrolling-front-page.scss */
 #main {
   padding-top: 0px;
 }
 
-/* line 49, ../sass/scrolling-front-page.scss */
+/* line 53, ../sass/scrolling-front-page.scss */
 #page {
   margin: 0px;
   max-width: 100%;
   width: 100%;
 }
 
-/* line 57, ../sass/scrolling-front-page.scss */
+/* line 61, ../sass/scrolling-front-page.scss */
 #content {
   padding-right: 0px;
   padding-left: 0px;
 }
 
-/* line 64, ../sass/scrolling-front-page.scss */
+/* line 68, ../sass/scrolling-front-page.scss */
 #page-title {
   margin-top: 1em;
   margin-left: 1em;
   margin-bottom: 0.5em;
 }
 
-/* line 72, ../sass/scrolling-front-page.scss */
+/* line 76, ../sass/scrolling-front-page.scss */
 .canvas-class .region-class {
   width: 100%;
 }
