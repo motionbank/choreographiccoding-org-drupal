@@ -8,6 +8,13 @@
  */
 
 
+function ccl_panels_flexible ( $vars )
+{
+  //var_dump( $vars );
+  $header = "<nav>Test panel navigation</nav>";
+  return $header . theme_panels_flexible( $vars );
+}
+
 /**
  * Override or insert variables into the maintenance page template.
  *
@@ -52,11 +59,28 @@ function ccl_preprocess_html(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
-function ccl_preprocess_page(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+
+function ccl_preprocess_page ( &$variables, $hook )
+{
+  // add template suggestions for the panel page
+  // http://www.grasmash.com/article/add-drupal-template-suggestion-panels-page-paneltplphp
+  if ( function_exists('page_manager_get_current_page') && 
+       $panel_page = page_manager_get_current_page() )
+  {
+    $suggestions[] = 'page__panel';
+    $suggestions[] = 'page__' . str_replace('-','_',$panel_page['name']);
+
+    $variables['theme_hook_suggestions'] = 
+      array_merge( $variables['theme_hook_suggestions'], $suggestions );
+  }
+
+  dsm( $variables['theme_hook_suggestions'] );
 }
-// */
+
+function ccl_preprocess_panels_pane ( &$variables )
+{
+  //var_dump( $variables ); exit();
+}
 
 /**
  * Override or insert variables into the node templates.

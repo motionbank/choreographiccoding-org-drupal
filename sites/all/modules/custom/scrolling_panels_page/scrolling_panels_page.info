@@ -1,0 +1,7 @@
+name = Scrolling Panels Page
+description = "Support for a scrolling website based on panels pages"
+dependencies[] = panels
+package = "Panels"
+core = 7.x
+version = "7.x-1.0"
+

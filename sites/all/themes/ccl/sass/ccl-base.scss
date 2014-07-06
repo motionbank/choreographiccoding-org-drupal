@@ -1,0 +1,33 @@
+$base-font-family: 'Lato', sans-serif;
+$base-font-color: black;
+
+body {
+	font-family: $base-font-family;
+	font-size: 13px;
+	font-weight: 300;
+	color: $base-font-color;
+}
+
+a {
+	&,
+	&:hover,
+	&:active,
+	&:visited {
+		color: $base-font-color;
+		text-decoration: none;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-transform: uppercase;
+}
+
+.node-title,
+.title {
+	font-weight: 100;
+	text-transform: uppercase;
+}
+
+.logged-in div#panels-ipe-control-container {
+	z-index: 0;
+}

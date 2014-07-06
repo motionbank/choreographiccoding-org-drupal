@@ -1,0 +1,30 @@
+/* line 4, ../sass/ccl-base.scss */
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: black;
+}
+
+/* line 15, ../sass/ccl-base.scss */
+a, a:hover, a:active, a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+/* line 21, ../sass/ccl-base.scss */
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+}
+
+/* line 26, ../sass/ccl-base.scss */
+.node-title,
+.title {
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+/* line 31, ../sass/ccl-base.scss */
+.logged-in div#panels-ipe-control-container {
+  z-index: 0;
+}
