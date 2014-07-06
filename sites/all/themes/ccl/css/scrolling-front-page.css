@@ -1,0 +1,66 @@
+/* line 3, ../sass/scrolling-front-page.scss */
+#header {
+  padding: 0px;
+}
+/* line 9, ../sass/scrolling-front-page.scss */
+#header .block-menu {
+  margin-top: 41px;
+  margin-right: 41px;
+  padding-top: 1em;
+  float: right;
+}
+/* line 16, ../sass/scrolling-front-page.scss */
+#header .block-menu h2 {
+  display: none;
+}
+/* line 20, ../sass/scrolling-front-page.scss */
+#header .block-menu ul {
+  padding: 0px;
+  margin: 0px;
+}
+/* line 24, ../sass/scrolling-front-page.scss */
+#header .block-menu ul li {
+  float: left;
+  padding: 0px;
+  margin: 0px;
+  margin-right: 1em;
+  list-style: none;
+}
+/* line 32, ../sass/scrolling-front-page.scss */
+#header .block-menu ul li a {
+  display: block;
+}
+/* line 37, ../sass/scrolling-front-page.scss */
+#header .block-menu ul li.last {
+  margin-right: 0em;
+}
+
+/* line 44, ../sass/scrolling-front-page.scss */
+#main {
+  padding-top: 0px;
+}
+
+/* line 49, ../sass/scrolling-front-page.scss */
+#page {
+  margin: 0px;
+  max-width: 100%;
+  width: 100%;
+}
+
+/* line 57, ../sass/scrolling-front-page.scss */
+#content {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+/* line 64, ../sass/scrolling-front-page.scss */
+#page-title {
+  margin-top: 1em;
+  margin-left: 1em;
+  margin-bottom: 0.5em;
+}
+
+/* line 72, ../sass/scrolling-front-page.scss */
+.canvas-class .region-class {
+  width: 100%;
+}

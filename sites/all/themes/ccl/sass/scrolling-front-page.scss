@@ -1,0 +1,75 @@
+#header {
+
+	& {
+		padding: 0px;
+	}
+
+	.block-menu {
+
+		& {
+			margin-top: 41px;
+			margin-right: 41px;
+			padding-top: 1em;
+			float: right;
+		}
+
+		h2 {
+			display: none;
+		}
+
+		ul {
+			padding: 0px;
+			margin: 0px;
+
+			li {
+				float: left;
+
+				padding: 0px;
+				margin: 0px;
+				margin-right: 1em;
+				list-style: none;
+
+				a {
+					display: block;
+				}
+			}
+
+			li.last {
+				margin-right: 0em;
+			}
+		}
+	}
+}
+
+#main {
+	padding-top: 0px
+}
+
+#page {
+	& {
+		margin: 0px;
+		max-width: 100%;
+		width: 100%;
+	}
+}
+
+#content {
+	& {
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+}
+
+#page-title {
+	& {
+		margin-top: 1em;
+		margin-left: 1em;
+		margin-bottom: 0.5em;
+	}
+}
+
+.canvas-class {
+	.region-class {
+		width: 100%;
+	}
+}

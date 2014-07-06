@@ -1,9 +1,17 @@
 <?php
+	// http://dustinbons.com/panels-styles-plugin-drupal-7
 	drupal_add_css(
-		drupal_get_path('module','example_styles') .'/plugins/styles/example_styles/example.css', 
-		array('group' => CSS_DEFAULT, 
-		'every_page' => TRUE));
+		drupal_get_path( 'module', 'scrolling_panels_page' ) .'/plugins/styles/example/example.css', 
+		array(
+			'group' => CSS_DEFAULT, 
+			'every_page' => TRUE
+		) 
+	);
 ?>
 <div class="example-region">
-	<?php print render($content->content); ?>
+	<?php if ( $content ) : ?>
+		<?php print render( $content ); ?>
+	<?php else : ?>
+		No content!
+	<?php endif; ?>
 </div>

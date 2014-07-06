@@ -1,0 +1,36 @@
+
+.region-slideshow {
+	position: relative;
+	height: 100vh; /* set per js for older bowsers */
+	overflow: hidden;
+}
+
+.region-slideshow .pane {
+	border: 1px solid transparent; /* ? needed to remove gaps */
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.region-slideshow .pane.slide {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: none;
+}
+
+.region-slideshow .pane.slide.active {
+	display: block;
+}
+
+.region-slideshow .pane .inner {
+	margin-top: 10%;
+	margin-left: 25%;
+	margin-right: 25%;
+	padding: 1em 2em;
+	background-color: rgba(255,255,255,0.8);
+}
+
+.region-slideshow .pane .pane-title {
+	margin-top: 0px;
+}

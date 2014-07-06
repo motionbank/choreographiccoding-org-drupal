@@ -8,12 +8,13 @@
  */
 
 
-function ccl_panels_flexible ( $vars )
-{
-  //var_dump( $vars );
-  $header = "<nav>Test panel navigation</nav>";
-  return $header . theme_panels_flexible( $vars );
-}
+// function ccl_panels_flexible ( $vars )
+// {
+//   //var_dump( $vars );
+//   $header = "";
+//   //$header = "<nav>Test panel navigation</nav>";
+//   return $header . theme_panels_flexible( $vars );
+// }
 
 /**
  * Override or insert variables into the maintenance page template.
@@ -73,8 +74,6 @@ function ccl_preprocess_page ( &$variables, $hook )
     $variables['theme_hook_suggestions'] = 
       array_merge( $variables['theme_hook_suggestions'], $suggestions );
   }
-
-  dsm( $variables['theme_hook_suggestions'] );
 }
 
 function ccl_preprocess_panels_pane ( &$variables )

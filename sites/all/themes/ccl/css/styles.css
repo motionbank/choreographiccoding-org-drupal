@@ -1806,17 +1806,24 @@ a, a:hover, a:active, a:visited {
 
 /* line 21, ../sass/ccl-base.scss */
 h1, h2, h3, h4, h5, h6 {
+  font-size: 17px;
+  letter-spacing: 0.05em;
+  font-weight: 400;
   text-transform: uppercase;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
-/* line 26, ../sass/ccl-base.scss */
+/* line 31, ../sass/ccl-base.scss */
 .node-title,
 .title {
+  font-size: 41px;
+  letter-spacing: 0.05em;
   font-weight: 100;
   text-transform: uppercase;
 }
 
-/* line 31, ../sass/ccl-base.scss */
+/* line 38, ../sass/ccl-base.scss */
 .logged-in div#panels-ipe-control-container {
   z-index: 0;
 }
