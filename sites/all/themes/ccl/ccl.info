@@ -63,11 +63,16 @@ stylesheets[all][] = css/styles.css
 ;stylesheets-conditional[lte IE 8][all][] = css/ie8.css
 
 
-
 ; Optionally add some JavaScripts to your theme.
 
-;scripts[] = js/script.js
+; http://imakewebthings.com/jquery-waypoints/
+scripts[] = js/waypoints.js
+; http://leafo.net/sticky-kit/
+scripts[] = js/jquery.sticky-kit.js
 
+; NOTE, some more are being added per drupal_add_js() in tpl's
+
+;scripts[] = js/script.js
 
 
 ; This section lists the regions defined in Zen's default page.tpl.php and
