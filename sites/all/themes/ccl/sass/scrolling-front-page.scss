@@ -73,7 +73,51 @@
 }
 
 .canvas-class {
-	.region-class {
-		width: 100%;
+
+	.row-class {
+
+		& {
+			padding: 0px;
+			padding-left: 3em;
+			padding-right: 3em;
+			padding-top: 3em;
+		}
+
+	}
+
+	.row-class.full-width {
+
+		& {
+			padding: 0px;
+		}
+
+		.region-class {
+			width: 100%;
+		}
+	}
+
+	.panel-pane a {
+		font-weight: bold;
+		font-style: italic;
+	}
+
+	.panel-pane.menu {
+
+		ul {
+			padding: 0px;
+			margin: 0px;
+
+			li {
+				list-style: none;
+				padding: 0px;
+				margin: 0px;
+			}
+			
+			li a {
+				padding-left: 1em;
+				font-weight: normal;
+				font-style: normal;
+			}
+		}
 	}
 }

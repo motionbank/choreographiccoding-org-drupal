@@ -64,7 +64,40 @@
   margin-bottom: 0.5em;
 }
 
-/* line 76, ../sass/scrolling-front-page.scss */
-.canvas-class .region-class {
+/* line 79, ../sass/scrolling-front-page.scss */
+.canvas-class .row-class {
+  padding: 0px;
+  padding-left: 3em;
+  padding-right: 3em;
+  padding-top: 3em;
+}
+/* line 90, ../sass/scrolling-front-page.scss */
+.canvas-class .row-class.full-width {
+  padding: 0px;
+}
+/* line 94, ../sass/scrolling-front-page.scss */
+.canvas-class .row-class.full-width .region-class {
   width: 100%;
+}
+/* line 99, ../sass/scrolling-front-page.scss */
+.canvas-class .panel-pane a {
+  font-weight: bold;
+  font-style: italic;
+}
+/* line 106, ../sass/scrolling-front-page.scss */
+.canvas-class .panel-pane.menu ul {
+  padding: 0px;
+  margin: 0px;
+}
+/* line 110, ../sass/scrolling-front-page.scss */
+.canvas-class .panel-pane.menu ul li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+/* line 116, ../sass/scrolling-front-page.scss */
+.canvas-class .panel-pane.menu ul li a {
+  padding-left: 1em;
+  font-weight: normal;
+  font-style: normal;
 }

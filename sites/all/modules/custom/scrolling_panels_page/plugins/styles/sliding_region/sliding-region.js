@@ -28,6 +28,13 @@ jQuery(function(){
 				$activePane = $pane;
 				$activePaneIdx = 0;
 			}
+			var img_src = $pane.data('bg-img-full-path'), img = new Image();
+			img.onload = function () {
+				$pane.css({
+					'background-image' : 'url('+img_src+')'
+				});
+			};
+			img.src = img_src;
 		});
 
 		var transition = function ( $from, $to, cb ) {

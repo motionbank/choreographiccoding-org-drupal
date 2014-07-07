@@ -18,8 +18,8 @@ jQuery(function(){
                 jQuery('html,body').animate({
                     scrollTop: t
                 }, {
-                    done : function () {
-                        
+                    complete : function () {
+                    	console.log( 'complete' );
                     },
                     duration: 650
                 });
