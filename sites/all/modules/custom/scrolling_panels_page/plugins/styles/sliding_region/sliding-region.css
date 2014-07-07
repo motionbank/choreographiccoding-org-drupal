@@ -34,3 +34,7 @@
 .region-slideshow .pane .pane-title {
 	margin-top: 0px;
 }
+
+.region-slideshow .pane .pane-content p:last-child {
+	margin-bottom: 0px;
+}
