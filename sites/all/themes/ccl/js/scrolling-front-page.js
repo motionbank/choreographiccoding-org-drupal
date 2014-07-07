@@ -19,7 +19,6 @@ jQuery(function(){
                     scrollTop: t
                 }, {
                     complete : function () {
-                    	console.log( 'complete' );
                     },
                     duration: 650
                 });
@@ -28,6 +27,6 @@ jQuery(function(){
         }
     });
 
-    
+
 
 });

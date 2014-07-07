@@ -6,8 +6,6 @@
 ; lines in this file, you MUST refresh Drupal 7's cache by simply visiting the
 ; Appearance page at admin/appearance.
 
-
-
 ; The name, description and screenshot used for this theme on the Appearance
 ; page at admin/appearance.
 
@@ -15,14 +13,10 @@ screenshot  = screenshot.png
 name        = Choreographic Coding Lab theme
 description = Based upon Zen
 
-
-
 ; This theme is compatible with Drupal 7 core. And it is a sub-theme of Zen.
 
 core        = 7.x
 base theme  = zen
-
-
 
 ; This section controls the CSS files for your theme. There are 3 different
 ; things you can do with a "stylesheets" line:
@@ -72,7 +66,7 @@ scripts[] = js/jquery.sticky-kit.js
 
 ; NOTE, some more are being added per drupal_add_js() in tpl's
 
-;scripts[] = js/script.js
+scripts[] = js/script.js
 
 
 ; This section lists the regions defined in Zen's default page.tpl.php and
