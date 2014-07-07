@@ -4,6 +4,27 @@
 		padding: 0px;
 	}
 
+	&.is_stuck {
+
+		background-color: white;
+		z-index: 999;
+
+	}
+
+	&.is_stuck h1 {
+
+		margin-top: 47px;
+		padding-left: 28px;
+		padding-top: 1em;
+		padding-bottom: 0px;
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: 11px;
+		letter-spacing: 0.09em;
+		line-height: 1.5em;
+
+	}
+
 	.block-menu {
 
 		& {
@@ -119,5 +140,44 @@
 				font-style: normal;
 			}
 		}
+	}
+}
+
+.view-projects {
+
+	.views-row {
+
+		float: left;
+		width: 480px;
+		height: 400px;
+		margin-right: 1em;
+	}
+
+	.views-field-field-images-2 {
+
+		background-color: #eee;
+		min-height: 300px;
+		width: 480px;
+		line-height: 0px;
+	}
+
+}
+
+.view-participants {
+
+	.views-row {
+
+		float: left;
+		width: 220px;
+		height: 400px;
+		margin-right: 1em;
+	}
+
+	.views-field-picture {
+
+		background-color: #eee;
+		min-height: 100px;
+		height: 220px;
+		line-height: 0px;
 	}
 }
