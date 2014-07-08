@@ -95,6 +95,11 @@
 
 .canvas-class {
 
+	/* remove 99.999% setting for rows that have only 1 region (first==last) */
+	.region-class.region-class-first.region-class-last {
+		width: 100%
+	}
+
 	.row-class {
 
 		& {
@@ -143,41 +148,78 @@
 	}
 }
 
-.view-projects {
+.view-projects, .view-participants {
 
 	.views-row {
+		
+		& {
+			float: left;
+    		position: relative;
+    		width: 25%;
+			background-size: cover;
+			background-color: #444;
+		}
 
-		float: left;
-		width: 480px;
-		height: 400px;
-		margin-right: 1em;
-	}
+		.ratio {
+			padding-top: 75%; /* 4:3 aspect ratio */
+		}
 
-	.views-field-field-images-2 {
+		.project, .participant {
 
-		background-color: #eee;
-		min-height: 300px;
-		width: 480px;
-		line-height: 0px;
+			& {
+				position: absolute;
+		    	top: 0; 		    
+		    	bottom: 0;
+		    	left: 0;
+		    	right: 0;
+				color: white;
+		    }
+
+		    .content {
+		    	position: absolute;
+		    	bottom: 0px;
+		    	left: 0px;
+		    	right: 0px;
+		    	padding: 1em;
+		    }
+
+		    .title, .title a, .name, .name a {
+		    	font-size: 13px;
+				letter-spacing: 0.05em;
+				font-weight: 400;
+				text-transform: uppercase;
+				font-style: normal;
+				color: white;
+		    }
+
+		    .participants {
+		    	display: none;
+		    }
+
+		}
+
+		&:hover {
+
+			.content {
+		    	background-color: #222;
+			}
+
+		    .participants {
+		    	display: block;
+		    }
+		}
+
 	}
 
 }
 
 .view-participants {
-
 	.views-row {
-
-		float: left;
-		width: 220px;
-		height: 400px;
-		margin-right: 1em;
-	}
-
-	.views-field-picture {
-
-		background-color: #eee;
-		min-height: 100px;
-		height: 220px;
-		line-height: 0px;
+		& {
+    		width: 12.5%;
+		}
+		.ratio {
+			padding-top: 100%; /* 4:3 aspect ratio */
+		}
 	}
 }

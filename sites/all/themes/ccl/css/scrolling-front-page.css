@@ -81,70 +81,110 @@
   margin-bottom: 0.5em;
 }
 
-/* line 100, ../sass/scrolling-front-page.scss */
+/* line 96, ../sass/scrolling-front-page.scss */
+.canvas-class {
+  /* remove 99.999% setting for rows that have only 1 region (first==last) */
+}
+/* line 99, ../sass/scrolling-front-page.scss */
+.canvas-class .region-class.region-class-first.region-class-last {
+  width: 100%;
+}
+/* line 105, ../sass/scrolling-front-page.scss */
 .canvas-class .row-class {
   padding: 0px;
   padding-left: 3em;
   padding-right: 3em;
   padding-top: 3em;
 }
-/* line 111, ../sass/scrolling-front-page.scss */
+/* line 116, ../sass/scrolling-front-page.scss */
 .canvas-class .row-class.full-width {
   padding: 0px;
 }
-/* line 115, ../sass/scrolling-front-page.scss */
+/* line 120, ../sass/scrolling-front-page.scss */
 .canvas-class .row-class.full-width .region-class {
   width: 100%;
 }
-/* line 120, ../sass/scrolling-front-page.scss */
+/* line 125, ../sass/scrolling-front-page.scss */
 .canvas-class .panel-pane a {
   font-weight: bold;
   font-style: italic;
 }
-/* line 127, ../sass/scrolling-front-page.scss */
+/* line 132, ../sass/scrolling-front-page.scss */
 .canvas-class .panel-pane.menu ul {
   padding: 0px;
   margin: 0px;
 }
-/* line 131, ../sass/scrolling-front-page.scss */
+/* line 136, ../sass/scrolling-front-page.scss */
 .canvas-class .panel-pane.menu ul li {
   list-style: none;
   padding: 0px;
   margin: 0px;
 }
-/* line 137, ../sass/scrolling-front-page.scss */
+/* line 142, ../sass/scrolling-front-page.scss */
 .canvas-class .panel-pane.menu ul li a {
   padding-left: 1em;
   font-weight: normal;
   font-style: normal;
 }
 
-/* line 148, ../sass/scrolling-front-page.scss */
-.view-projects .views-row {
+/* line 155, ../sass/scrolling-front-page.scss */
+.view-projects .views-row, .view-participants .views-row {
   float: left;
-  width: 480px;
-  height: 400px;
-  margin-right: 1em;
+  position: relative;
+  width: 25%;
+  background-size: cover;
+  background-color: #444;
 }
-/* line 156, ../sass/scrolling-front-page.scss */
-.view-projects .views-field-field-images-2 {
-  background-color: #eee;
-  min-height: 300px;
-  width: 480px;
-  line-height: 0px;
+/* line 163, ../sass/scrolling-front-page.scss */
+.view-projects .views-row .ratio, .view-participants .views-row .ratio {
+  padding-top: 75%;
+  /* 4:3 aspect ratio */
+}
+/* line 169, ../sass/scrolling-front-page.scss */
+.view-projects .views-row .project, .view-projects .views-row .participant, .view-participants .views-row .project, .view-participants .views-row .participant {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+}
+/* line 178, ../sass/scrolling-front-page.scss */
+.view-projects .views-row .project .content, .view-projects .views-row .participant .content, .view-participants .views-row .project .content, .view-participants .views-row .participant .content {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  padding: 1em;
+}
+/* line 186, ../sass/scrolling-front-page.scss */
+.view-projects .views-row .project .title, .view-projects .views-row .project .title a, .view-projects .views-row .project .name, .view-projects .views-row .project .name a, .view-projects .views-row .participant .title, .view-projects .views-row .participant .title a, .view-projects .views-row .participant .name, .view-projects .views-row .participant .name a, .view-participants .views-row .project .title, .view-participants .views-row .project .title a, .view-participants .views-row .project .name, .view-participants .views-row .project .name a, .view-participants .views-row .participant .title, .view-participants .views-row .participant .title a, .view-participants .views-row .participant .name, .view-participants .views-row .participant .name a {
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-style: normal;
+  color: white;
+}
+/* line 195, ../sass/scrolling-front-page.scss */
+.view-projects .views-row .project .participants, .view-projects .views-row .participant .participants, .view-participants .views-row .project .participants, .view-participants .views-row .participant .participants {
+  display: none;
+}
+/* line 203, ../sass/scrolling-front-page.scss */
+.view-projects .views-row:hover .content, .view-participants .views-row:hover .content {
+  background-color: #222;
+}
+/* line 207, ../sass/scrolling-front-page.scss */
+.view-projects .views-row:hover .participants, .view-participants .views-row:hover .participants {
+  display: block;
 }
 
-/* line 168, ../sass/scrolling-front-page.scss */
+/* line 218, ../sass/scrolling-front-page.scss */
 .view-participants .views-row {
-  float: left;
-  width: 220px;
-  height: 400px;
-  margin-right: 1em;
+  width: 12.5%;
 }
-/* line 176, ../sass/scrolling-front-page.scss */
-.view-participants .views-field-picture {
-  background-color: #eee;
-  min-height: 100px;
-  height: 220px;
-  line-height: 0px;
+/* line 221, ../sass/scrolling-front-page.scss */
+.view-participants .views-row .ratio {
+  padding-top: 100%;
+  /* 4:3 aspect ratio */
 }

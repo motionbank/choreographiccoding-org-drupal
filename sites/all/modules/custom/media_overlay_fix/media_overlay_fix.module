@@ -1,0 +1,6 @@
+<?php
+	
+	function media_overlay_fix_preprocess_html ( &$vars )
+	{
+		drupal_add_css( drupal_get_path('module','media_overlay_fix') . '/media_overlay_fix.css' );
+	}
