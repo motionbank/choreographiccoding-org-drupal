@@ -182,7 +182,7 @@ jQuery(function(){
 			var $links = jQuery('a[href="#'+data.id+'"],a[href="'+window.location.pathname+'#'+data.id+'"]');
 			if ( data.direction == 'down' && $links.length > 0 ) {
 				jQuery('a').removeClass('active');
-				console.log( $links );
+				//console.log( $links );
 				$links.addClass('active');
 			}
 		});

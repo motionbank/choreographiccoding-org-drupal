@@ -1,6 +1,6 @@
 jQuery(function(){
 
-    var header_offset_top = 80;
+    var header_offset_top = 60;
 
 	// add scroll-to anchor effect to menu and links with scroll-to-link class
     // http://css-tricks.com/snippets/jquery/smooth-scrolling/
@@ -10,11 +10,21 @@ jQuery(function(){
         {
             var $target = jQuery(this.hash);
             $target = $target.length ? $target : jQuery('[name=' + this.hash.slice(1) + ']');
-            if ( $target.length == 1 ) {
 
+            if ( $target.length == 1 ) 
+            {
+                var $self = jQuery(this);
                 var ttop = $target.data('top');
                 if ( !ttop ) {
-                    ttop = $target.offset().top;
+
+                    var is_internal = $self.parent().parent().parent().hasClass('in-pane-nav');
+
+                    if ( is_internal ) {
+                        ttop = $target.offset().top;
+                    } else {
+                        ttop = $target.parent().offset().top;
+                    }
+                    
                     $target.data('top',ttop);
                 }
                 var t = ttop - header_offset_top;
