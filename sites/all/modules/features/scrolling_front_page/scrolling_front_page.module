@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Scrolling front page feature.
+ */
+
+include_once 'scrolling_front_page.features.inc';
