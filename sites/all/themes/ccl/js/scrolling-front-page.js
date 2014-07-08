@@ -24,7 +24,7 @@ jQuery(function(){
                     } else {
                         ttop = $target.parent().offset().top;
                     }
-                    
+
                     $target.data('top',ttop);
                 }
                 var t = ttop - header_offset_top;
@@ -47,7 +47,7 @@ jQuery(function(){
 
     jQuery('.row-class .sticky-in-region').stick_in_parent({
         parent: '.row-class',
-        offset_top: header_offset_top
+        offset_top: header_offset_top - 10
     });
 
     jQuery( '#header' ).stick_in_parent({
