@@ -5,7 +5,7 @@
 		$img = file_load( $img_id );
 		$style = $field->options['image_style'];
 		//$img_src_full = file_create_url( file_create_url( $img['uri'] ) );
-		$img_src = file_create_url( image_style_path( $style, $img->uri ) );
+		$img_src = image_style_url( $style, $img->uri );
 
 		print $img_src;
 	}

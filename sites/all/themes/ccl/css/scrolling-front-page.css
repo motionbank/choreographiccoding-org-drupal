@@ -150,7 +150,7 @@
   background-color: #444;
 }
 /* line 178, ../sass/scrolling-front-page.scss */
-.view-projects .views-row .project, .view-projects .views-row .project a, .view-projects .views-row .participant, .view-projects .views-row .participant a, .view-participants .views-row .project, .view-participants .views-row .project a, .view-participants .views-row .participant, .view-participants .views-row .participant a {
+.view-projects .views-row .project, .view-projects .views-row .project a, .view-projects .views-row .project .title, .view-projects .views-row .project .name, .view-projects .views-row .participant, .view-projects .views-row .participant a, .view-projects .views-row .participant .title, .view-projects .views-row .participant .name, .view-participants .views-row .project, .view-participants .views-row .project a, .view-participants .views-row .project .title, .view-participants .views-row .project .name, .view-participants .views-row .participant, .view-participants .views-row .participant a, .view-participants .views-row .participant .title, .view-participants .views-row .participant .name {
   color: white;
   font-size: 13px;
   font-style: normal;
