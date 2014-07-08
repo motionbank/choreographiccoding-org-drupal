@@ -156,8 +156,6 @@
 			float: left;
     		position: relative;
     		width: 25%;
-			background-size: cover;
-			background-color: #444;
 		}
 
 		.ratio {
@@ -172,7 +170,16 @@
 		    	bottom: 0;
 		    	left: 0;
 		    	right: 0;
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-color: #444;
+		    }
+
+		    &, a {
 				color: white;
+		    	font-size: 13px;
+				font-style: normal;
+				font-weight: 100;
 		    }
 
 		    .content {
@@ -183,16 +190,15 @@
 		    	padding: 1em;
 		    }
 
-		    .title, .title a, .name, .name a {
-		    	font-size: 13px;
+		    .title, .title a, 
+		    .name, .name a {
 				letter-spacing: 0.05em;
 				font-weight: 400;
 				text-transform: uppercase;
-				font-style: normal;
 				color: white;
 		    }
 
-		    .participants {
+		    .participants, .labs, .projects {
 		    	display: none;
 		    }
 
@@ -204,7 +210,7 @@
 		    	background-color: #222;
 			}
 
-		    .participants {
+		    .participants, .labs, .projects {
 		    	display: block;
 		    }
 		}

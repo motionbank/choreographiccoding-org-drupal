@@ -1,0 +1,5 @@
+name = Lab content type utilities
+description = "Things needed for content type 'Lab'"
+core = 7.x
+version = "7.x-1.0"
+

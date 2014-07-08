@@ -1,0 +1,33 @@
+<?php
+
+	function lab_content_type_node_presave ( $node ) 
+	{
+		if ( $node->type == 'lab' )
+		{
+			$user_ids = $node->field_participants[LANGUAGE_NONE];
+			$users = array();
+
+			if ( !empty( $user_ids ) )
+			{
+				foreach ( $user_ids as $target ) 
+				{
+					$uid = $target['target_id'];
+					if ( $uid >= 0 )
+					{
+						$user = user_load( $uid );
+						$users[$user->name] = $uid;
+					}
+				}
+
+				if ( ksort( $users ) )
+				{
+					$user_arr = array();
+					foreach ( array_values( $users ) as $uid )
+					{
+						$user_arr[] = array('target_id'=>$uid);
+					}
+					$node->field_participants[LANGUAGE_NONE] = $user_arr;
+				}
+			}
+		}
+	}
