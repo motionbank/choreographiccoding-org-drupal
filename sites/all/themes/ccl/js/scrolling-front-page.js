@@ -21,11 +21,24 @@ jQuery(function(){
         jQuery('a').removeClass('active');
         jQuery(this).addClass('active');
 
+        var hash = $target.attr('id');
+        $target.attr('id','');
+        var fix = jQuery( '<div></div>' )
+                      .css({
+                          position:'absolute',
+                          visibility:'hidden',
+                          top: jQuery(document).scrollTop() + 'px'
+                      })
+                      .attr( 'id', hash )
+                      .appendTo( document.body );
+        document.location.hash = hash;
+        fix.remove();
+        $target.attr('id',hash);
+
         jQuery('html,body').animate({
             scrollTop: t
         }, {
             complete : function () {
-                window.location.hash = $target.attr('id');
             },
             duration: 650
         });
@@ -33,7 +46,7 @@ jQuery(function(){
 
 	// add scroll-to anchor effect to menu and links with scroll-to-link class
     // http://css-tricks.com/snippets/jquery/smooth-scrolling/
-    jQuery('a').click(function() {
+    jQuery('a').click(function(evt) {
         if ( location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && 
              location.hostname == this.hostname ) 
         {
@@ -42,6 +55,8 @@ jQuery(function(){
 
             if ( $target.length == 1 ) 
             {
+                evt.preventDefault();
+
                 var $self = jQuery(this);
                 var is_internal = $self.parent().parent().parent().hasClass('in-pane-nav');
 
@@ -61,12 +76,12 @@ jQuery(function(){
         offset_top: -35
     });
 
-    var hash = window.location.hash;
-    var $target = jQuery( hash );
-    if ( $target.length > 0 ) {
-        jQuery('html, body').animate({ scrollTop: 0 });
-        window.location.hash = '';
-        scroll_to_target( $target, false );
+    var hash = document.location.hash;
+    if ( hash ) {
+        var $target = jQuery( hash );
+        if ( $target.length > 0 ) {
+            scroll_to_target( $target, false );
+        }
     }
 
 });
