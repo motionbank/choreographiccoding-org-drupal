@@ -1810,12 +1810,13 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 17px;
   letter-spacing: 0.05em;
   font-weight: 400;
+  text-shadow: black 0 0 0;
   text-transform: uppercase;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
 
-/* line 31, ../sass/ccl-base.scss */
+/* line 32, ../sass/ccl-base.scss */
 .node-title,
 .title {
   font-size: 41px;
@@ -1824,17 +1825,17 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 
-/* line 38, ../sass/ccl-base.scss */
+/* line 39, ../sass/ccl-base.scss */
 .logged-in div#panels-ipe-control-container {
   z-index: 0;
 }
 
-/* line 43, ../sass/ccl-base.scss */
+/* line 44, ../sass/ccl-base.scss */
 span.at:before {
   content: "@";
 }
 
-/* line 49, ../sass/ccl-base.scss */
+/* line 50, ../sass/ccl-base.scss */
 span.dot:before {
   content: ".";
 }
