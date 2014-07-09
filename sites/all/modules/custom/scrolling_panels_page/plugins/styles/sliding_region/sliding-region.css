@@ -8,6 +8,7 @@
 .region-slideshow .pane {
 	border: 1px solid transparent; /* ? needed to remove gaps */
 	background-size: cover;
+	background-color: #222;
 	width: 100%;
 	height: 100%;
 }
@@ -24,11 +25,27 @@
 }
 
 .region-slideshow .pane .inner {
-	margin-top: 10%;
-	margin-left: 25%;
-	margin-right: 25%;
+	width: 50%;
+	margin: 10% auto;
 	padding: 1em 2em;
 	background-color: white; /* rgba(255,255,255,0.8) */
+}
+
+@media only screen and ( max-width: 930px ) {
+	.region-slideshow .pane .inner {
+		width: 400px;
+		margin: 10% auto;
+	}
+}
+
+@media only screen and ( max-width: 460px ) {
+	.region-slideshow .pane .inner {
+		width: auto;
+		margin: 0 auto;
+	}
+	.region-slideshow .pane {
+		background-image: none !important;
+	}
 }
 
 .region-slideshow .pane .pane-title {
