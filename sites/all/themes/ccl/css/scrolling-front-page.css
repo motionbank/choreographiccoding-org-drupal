@@ -126,19 +126,23 @@
   font-weight: normal;
   font-style: normal;
 }
+/* line 150, ../sass/scrolling-front-page.scss */
+.canvas-class .is-hidden {
+  display: none;
+}
 
-/* line 155, ../sass/scrolling-front-page.scss */
+/* line 159, ../sass/scrolling-front-page.scss */
 .view-projects .views-row, .view-participants .views-row {
   float: left;
   position: relative;
   width: 25%;
 }
-/* line 161, ../sass/scrolling-front-page.scss */
+/* line 165, ../sass/scrolling-front-page.scss */
 .view-projects .views-row .ratio, .view-participants .views-row .ratio {
   padding-top: 75%;
   /* 4:3 aspect ratio */
 }
-/* line 167, ../sass/scrolling-front-page.scss */
+/* line 171, ../sass/scrolling-front-page.scss */
 .view-projects .views-row .project, .view-projects .views-row .participant, .view-participants .views-row .project, .view-participants .views-row .participant {
   position: absolute;
   top: 0;
@@ -149,14 +153,14 @@
   background-repeat: no-repeat;
   background-color: #444;
 }
-/* line 178, ../sass/scrolling-front-page.scss */
+/* line 182, ../sass/scrolling-front-page.scss */
 .view-projects .views-row .project, .view-projects .views-row .project a, .view-projects .views-row .project .title, .view-projects .views-row .project .name, .view-projects .views-row .participant, .view-projects .views-row .participant a, .view-projects .views-row .participant .title, .view-projects .views-row .participant .name, .view-participants .views-row .project, .view-participants .views-row .project a, .view-participants .views-row .project .title, .view-participants .views-row .project .name, .view-participants .views-row .participant, .view-participants .views-row .participant a, .view-participants .views-row .participant .title, .view-participants .views-row .participant .name {
   color: white;
   font-size: 13px;
   font-style: normal;
   font-weight: 100;
 }
-/* line 185, ../sass/scrolling-front-page.scss */
+/* line 189, ../sass/scrolling-front-page.scss */
 .view-projects .views-row .project .content, .view-projects .views-row .participant .content, .view-participants .views-row .project .content, .view-participants .views-row .participant .content {
   position: absolute;
   bottom: 0px;
@@ -164,7 +168,7 @@
   right: 0px;
   padding: 1em;
 }
-/* line 194, ../sass/scrolling-front-page.scss */
+/* line 198, ../sass/scrolling-front-page.scss */
 .view-projects .views-row .project .title, .view-projects .views-row .project .title a,
 .view-projects .views-row .project .name, .view-projects .views-row .project .name a, .view-projects .views-row .participant .title, .view-projects .views-row .participant .title a,
 .view-projects .views-row .participant .name, .view-projects .views-row .participant .name a, .view-participants .views-row .project .title, .view-participants .views-row .project .title a,
@@ -175,24 +179,24 @@
   text-transform: uppercase;
   color: white;
 }
-/* line 201, ../sass/scrolling-front-page.scss */
+/* line 205, ../sass/scrolling-front-page.scss */
 .view-projects .views-row .project .participants, .view-projects .views-row .project .labs, .view-projects .views-row .project .projects, .view-projects .views-row .participant .participants, .view-projects .views-row .participant .labs, .view-projects .views-row .participant .projects, .view-participants .views-row .project .participants, .view-participants .views-row .project .labs, .view-participants .views-row .project .projects, .view-participants .views-row .participant .participants, .view-participants .views-row .participant .labs, .view-participants .views-row .participant .projects {
   display: none;
 }
-/* line 209, ../sass/scrolling-front-page.scss */
+/* line 213, ../sass/scrolling-front-page.scss */
 .view-projects .views-row:hover .content, .view-participants .views-row:hover .content {
   background-color: #222;
 }
-/* line 213, ../sass/scrolling-front-page.scss */
+/* line 217, ../sass/scrolling-front-page.scss */
 .view-projects .views-row:hover .participants, .view-projects .views-row:hover .labs, .view-projects .views-row:hover .projects, .view-participants .views-row:hover .participants, .view-participants .views-row:hover .labs, .view-participants .views-row:hover .projects {
   display: block;
 }
 
-/* line 224, ../sass/scrolling-front-page.scss */
+/* line 228, ../sass/scrolling-front-page.scss */
 .view-participants .views-row {
   width: 12.5%;
 }
-/* line 227, ../sass/scrolling-front-page.scss */
+/* line 231, ../sass/scrolling-front-page.scss */
 .view-participants .views-row .ratio {
   padding-top: 100%;
   /* 4:3 aspect ratio */

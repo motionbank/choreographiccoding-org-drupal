@@ -3,7 +3,8 @@
 	if ( !empty( $settings['background_image_file'] ) )
 	{
 		$bg_image_path = $settings['background_image_file']['style_paths']['large']['path'];
-		$bg_image_path_full = $settings['background_image_file']['path'];
+		//$bg_image_path_full = $settings['background_image_file']['path'];
+		$bg_image_path_full = $settings['background_image_file']['style_paths']['frontpage_backgrounds']['path'];
 	}
 	$css_id = $css_class = '';
 	if ( property_exists($content,'css_id') )
