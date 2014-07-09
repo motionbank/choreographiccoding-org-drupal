@@ -19,23 +19,23 @@
   letter-spacing: 0.09em;
   line-height: 1.5em;
 }
-/* line 30, ../sass/scrolling-front-page.scss */
+/* line 45, ../sass/scrolling-front-page.scss */
 #header .block-menu {
   margin-top: 41px;
   margin-right: 41px;
   padding-top: 1em;
   float: right;
 }
-/* line 37, ../sass/scrolling-front-page.scss */
+/* line 52, ../sass/scrolling-front-page.scss */
 #header .block-menu h2 {
   display: none;
 }
-/* line 41, ../sass/scrolling-front-page.scss */
+/* line 56, ../sass/scrolling-front-page.scss */
 #header .block-menu ul {
   padding: 0px;
   margin: 0px;
 }
-/* line 45, ../sass/scrolling-front-page.scss */
+/* line 60, ../sass/scrolling-front-page.scss */
 #header .block-menu ul li {
   float: left;
   padding: 0px;
@@ -43,7 +43,7 @@
   margin-right: 1em;
   list-style: none;
 }
-/* line 53, ../sass/scrolling-front-page.scss */
+/* line 68, ../sass/scrolling-front-page.scss */
 #header .block-menu ul li a {
   font-weight: 700;
   text-transform: uppercase;
@@ -51,122 +51,127 @@
   letter-spacing: 0.09em;
   display: block;
 }
-/* line 62, ../sass/scrolling-front-page.scss */
+/* line 77, ../sass/scrolling-front-page.scss */
 #header .block-menu ul li.last {
   margin-right: 0em;
 }
 
-/* line 69, ../sass/scrolling-front-page.scss */
+/* line 84, ../sass/scrolling-front-page.scss */
 #main {
   padding-top: 0px;
 }
 
-/* line 74, ../sass/scrolling-front-page.scss */
+/* line 89, ../sass/scrolling-front-page.scss */
 #page {
   margin: 0px;
   max-width: 100%;
   width: 100%;
 }
 
-/* line 82, ../sass/scrolling-front-page.scss */
+/* line 97, ../sass/scrolling-front-page.scss */
 #content {
   padding-right: 0px;
   padding-left: 0px;
 }
 
-/* line 89, ../sass/scrolling-front-page.scss */
+/* line 104, ../sass/scrolling-front-page.scss */
 #page-title {
   margin-top: 1em;
   margin-left: 1em;
   margin-bottom: 0.5em;
 }
 
-/* line 96, ../sass/scrolling-front-page.scss */
+/* line 111, ../sass/scrolling-front-page.scss */
 .canvas-class {
   /* remove 99.999% setting for rows that have only 1 region (first==last) */
 }
-/* line 99, ../sass/scrolling-front-page.scss */
+/* line 114, ../sass/scrolling-front-page.scss */
 .canvas-class .region-class.region-class-first.region-class-last {
   width: 100%;
 }
 @media only screen and (max-width: 760px) {
-  /* line 103, ../sass/scrolling-front-page.scss */
+  /* line 120, ../sass/scrolling-front-page.scss */
   .canvas-class .region-class {
     clear: both;
+    width: 100%;
+  }
+  /* line 125, ../sass/scrolling-front-page.scss */
+  .canvas-class .region-class-inside {
+    padding-left: 0px;
   }
 }
-/* line 111, ../sass/scrolling-front-page.scss */
+/* line 133, ../sass/scrolling-front-page.scss */
 .canvas-class .row-class {
   padding: 0px;
   padding-left: 3em;
   padding-right: 3em;
   padding-top: 3em;
 }
-/* line 121, ../sass/scrolling-front-page.scss */
+/* line 143, ../sass/scrolling-front-page.scss */
 .canvas-class .row-class.full-width {
   padding: 0px;
 }
-/* line 125, ../sass/scrolling-front-page.scss */
+/* line 147, ../sass/scrolling-front-page.scss */
 .canvas-class .row-class.full-width .region-class {
   width: 100%;
 }
-/* line 130, ../sass/scrolling-front-page.scss */
+/* line 152, ../sass/scrolling-front-page.scss */
 .canvas-class .panel-pane a {
   font-weight: bold;
   font-style: italic;
 }
-/* line 137, ../sass/scrolling-front-page.scss */
+/* line 159, ../sass/scrolling-front-page.scss */
 .canvas-class .panel-pane.menu ul {
   padding: 0px;
   margin: 0px;
 }
-/* line 141, ../sass/scrolling-front-page.scss */
+/* line 163, ../sass/scrolling-front-page.scss */
 .canvas-class .panel-pane.menu ul li {
   list-style: none;
   padding: 0px;
   margin: 0px;
 }
-/* line 147, ../sass/scrolling-front-page.scss */
+/* line 169, ../sass/scrolling-front-page.scss */
 .canvas-class .panel-pane.menu ul li a {
   padding-left: 1em;
   font-weight: normal;
   font-style: normal;
 }
-/* line 155, ../sass/scrolling-front-page.scss */
+/* line 177, ../sass/scrolling-front-page.scss */
 .canvas-class .is-hidden {
   display: none;
 }
 
-/* line 164, ../sass/scrolling-front-page.scss */
+/* line 186, ../sass/scrolling-front-page.scss */
 .view-projects .views-row, .view-participants .views-row {
   float: left;
   position: relative;
   width: 25%;
 }
-/* line 170, ../sass/scrolling-front-page.scss */
+/* line 192, ../sass/scrolling-front-page.scss */
 .view-projects .views-row .ratio, .view-participants .views-row .ratio {
   padding-top: 75%;
   /* 4:3 aspect ratio */
 }
 @media only screen and (max-width: 1020px) {
-  /* line 175, ../sass/scrolling-front-page.scss */
+  /* line 197, ../sass/scrolling-front-page.scss */
   .view-projects .views-row, .view-participants .views-row {
     width: 33.3333%;
   }
 }
 @media only screen and (max-width: 780px) {
-  /* line 181, ../sass/scrolling-front-page.scss */
+  /* line 203, ../sass/scrolling-front-page.scss */
   .view-projects .views-row, .view-participants .views-row {
     width: 50%;
   }
 }
 @media only screen and (max-width: 560px) {
-  /* line 187, ../sass/scrolling-front-page.scss */
+  /* line 209, ../sass/scrolling-front-page.scss */
   .view-projects .views-row, .view-participants .views-row {
     width: 100%;
   }
 }
-/* line 194, ../sass/scrolling-front-page.scss */
+/* line 216, ../sass/scrolling-front-page.scss */
 .view-projects .views-row .project, .view-projects .views-row .participant, .view-participants .views-row .project, .view-participants .views-row .participant {
   position: absolute;
   top: 0;
@@ -177,14 +182,14 @@
   background-repeat: no-repeat;
   background-color: #444;
 }
-/* line 205, ../sass/scrolling-front-page.scss */
+/* line 227, ../sass/scrolling-front-page.scss */
 .view-projects .views-row .project, .view-projects .views-row .project a, .view-projects .views-row .project .title, .view-projects .views-row .project .name, .view-projects .views-row .participant, .view-projects .views-row .participant a, .view-projects .views-row .participant .title, .view-projects .views-row .participant .name, .view-participants .views-row .project, .view-participants .views-row .project a, .view-participants .views-row .project .title, .view-participants .views-row .project .name, .view-participants .views-row .participant, .view-participants .views-row .participant a, .view-participants .views-row .participant .title, .view-participants .views-row .participant .name {
   color: white;
   font-size: 13px;
   font-style: normal;
   font-weight: 100;
 }
-/* line 212, ../sass/scrolling-front-page.scss */
+/* line 234, ../sass/scrolling-front-page.scss */
 .view-projects .views-row .project .content, .view-projects .views-row .participant .content, .view-participants .views-row .project .content, .view-participants .views-row .participant .content {
   position: absolute;
   bottom: 0px;
@@ -192,7 +197,7 @@
   right: 0px;
   padding: 1em;
 }
-/* line 221, ../sass/scrolling-front-page.scss */
+/* line 243, ../sass/scrolling-front-page.scss */
 .view-projects .views-row .project .title, .view-projects .views-row .project .title a,
 .view-projects .views-row .project .name, .view-projects .views-row .project .name a, .view-projects .views-row .participant .title, .view-projects .views-row .participant .title a,
 .view-projects .views-row .participant .name, .view-projects .views-row .participant .name a, .view-participants .views-row .project .title, .view-participants .views-row .project .title a,
@@ -203,48 +208,48 @@
   text-transform: uppercase;
   color: white;
 }
-/* line 228, ../sass/scrolling-front-page.scss */
+/* line 250, ../sass/scrolling-front-page.scss */
 .view-projects .views-row .project .participants, .view-projects .views-row .project .labs, .view-projects .views-row .project .projects, .view-projects .views-row .participant .participants, .view-projects .views-row .participant .labs, .view-projects .views-row .participant .projects, .view-participants .views-row .project .participants, .view-participants .views-row .project .labs, .view-participants .views-row .project .projects, .view-participants .views-row .participant .participants, .view-participants .views-row .participant .labs, .view-participants .views-row .participant .projects {
   display: none;
 }
-/* line 236, ../sass/scrolling-front-page.scss */
+/* line 258, ../sass/scrolling-front-page.scss */
 .view-projects .views-row:hover .content, .view-participants .views-row:hover .content {
   background-color: #222;
 }
-/* line 240, ../sass/scrolling-front-page.scss */
+/* line 262, ../sass/scrolling-front-page.scss */
 .view-projects .views-row:hover .participants, .view-projects .views-row:hover .labs, .view-projects .views-row:hover .projects, .view-participants .views-row:hover .participants, .view-participants .views-row:hover .labs, .view-participants .views-row:hover .projects {
   display: block;
 }
 
-/* line 253, ../sass/scrolling-front-page.scss */
+/* line 275, ../sass/scrolling-front-page.scss */
 .view-participants .views-row {
   width: 12.5%;
 }
-/* line 257, ../sass/scrolling-front-page.scss */
+/* line 279, ../sass/scrolling-front-page.scss */
 .view-participants .views-row .ratio {
   padding-top: 100%;
   /* 1:1 aspect ratio */
 }
 @media only screen and (max-width: 1020px) {
-  /* line 262, ../sass/scrolling-front-page.scss */
+  /* line 284, ../sass/scrolling-front-page.scss */
   .view-participants .views-row {
     width: 16.6666666%;
   }
 }
 @media only screen and (max-width: 780px) {
-  /* line 268, ../sass/scrolling-front-page.scss */
+  /* line 290, ../sass/scrolling-front-page.scss */
   .view-participants .views-row {
     width: 25%;
   }
 }
 @media only screen and (max-width: 560px) {
-  /* line 274, ../sass/scrolling-front-page.scss */
+  /* line 296, ../sass/scrolling-front-page.scss */
   .view-participants .views-row {
     width: 33.333333%;
   }
 }
 @media only screen and (max-width: 430px) {
-  /* line 280, ../sass/scrolling-front-page.scss */
+  /* line 302, ../sass/scrolling-front-page.scss */
   .view-participants .views-row {
     width: 50%;
   }
