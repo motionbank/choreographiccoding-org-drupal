@@ -27,6 +27,7 @@
  * HTML5 display definitions
  */
 /* Correct `block` display not defined in IE 8/9. */
+@import "http://fonts.googleapis.com/css?family=Lato:400,700italic,100,300,700";
 /* line 33, ../sass/_normalize.scss */
 article,
 aside,
