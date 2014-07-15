@@ -7,6 +7,7 @@
 
 .region-slideshow .pane {
 	border: 1px solid transparent; /* ? needed to remove gaps */
+	margin: -1px;
 	background-size: cover;
 	background-color: #222;
 	width: 100%;
