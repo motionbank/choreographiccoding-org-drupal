@@ -140,14 +140,14 @@ jQuery(function(){
 				clearTimeout( ts );
 			});
 
-			$region.hover(function(){
-				$region.trigger('stop-show');
-			},function(){
-				$region.trigger('start-show');
-			});
+			// $region.hover(function(){
+			// 	$region.trigger('stop-show');
+			// },function(){
+			// 	$region.trigger('start-show');
+			// });
 		});
 
-		jQuery( '.region-slideshow' ).first().trigger('start-show');
+		jQuery( '.region-slideshow autostart' ).first().trigger('start-show');
 
 	})();
 
