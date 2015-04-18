@@ -454,6 +454,9 @@ function _form_builder_webform_form_builder_load_hidden($form_element) {
   // Hidden elements may be #type "value" or "hidden". Set the internal property
   // to keep track of hidden fields.
   $form_element['#form_builder']['element_type'] = 'hidden';
+  if (!isset($form_element['#default_value'])) {
+    $form_element['#default_value'] = $form_element['#value'];
+  }
 
   return $form_element;
 }
@@ -764,10 +767,13 @@ function _form_builder_webform_form_builder_types_select() {
     ),
     'weight' => -5,
   );
-  $fields['select']['default'] = _form_builder_webform_default('select', array('aslist' => TRUE, 'multiple' => FALSE));
-  $fields['select']['default']['#options'] = array('1' => t('one'), '2' => t('two'), '3' => t('three'));
-  $fields['select']['default']['#default_value'] = 1;
-  $fields['select']['default']['#title'] = t('New select');
+  $items['items'] = "1|" . t('one') . "\n2|" . t('two') . "\n3|" . t('three');
+  $fields['select']['default'] = _form_builder_webform_default('select', array(
+    'name' => t('New select'),
+    'aslist' => TRUE,
+    'multiple' => FALSE,
+    'value' => '1',
+  ) + $items);
 
   $fields['checkboxes'] = array(
     'title' => t('Checkboxes'),
@@ -778,10 +784,12 @@ function _form_builder_webform_form_builder_types_select() {
     ),
     'weight' => -6,
   );
-  $fields['checkboxes']['default'] = _form_builder_webform_default('select', array('aslist' => FALSE, 'multiple' => TRUE));
-  $fields['checkboxes']['default']['#options'] = array('1' => t('one'), '2' => t('two'), '3' => t('three'));
-  $fields['checkboxes']['default']['#default_value'] = array(1, 2);
-  $fields['checkboxes']['default']['#title'] = t('New checkboxes');
+  $fields['checkboxes']['default'] = _form_builder_webform_default('select', array(
+    'name' => t('New checkboxes'),
+    'aslist' => FALSE,
+    'multiple' => TRUE,
+    'value' => '1,2',
+  ) + $items);
 
   $fields['radios'] = array(
     'title' => t('Radios'),
@@ -791,10 +799,12 @@ function _form_builder_webform_form_builder_types_select() {
     ),
     'weight' => -7,
   );
-  $fields['radios']['default'] = _form_builder_webform_default('select', array('aslist' => FALSE, 'multiple' => FALSE));
-  $fields['radios']['default']['#options'] = array('1' => t('one'), '2' => t('two'), '3' => t('three'));
-  $fields['radios']['default']['#default_value'] = 1;
-  $fields['radios']['default']['#title'] = t('New radios');
+  $fields['radios']['default'] = _form_builder_webform_default('select', array(
+    'name' => t('New radios'),
+    'aslist' => FALSE,
+    'multiple' => FALSE,
+    'value' => '1',
+  ) + $items);
 
   return $fields;
 }
@@ -807,6 +817,14 @@ function _form_builder_webform_form_builder_map_select() {
     'properties' => array(
       'key_type_toggled' => array(
         'storage_parents' => array('extra', 'custom_keys'),
+      ),
+      'other_option' => array(
+        'form_parents' => array('items', 'options', 'option_settings', 'other_option'),
+        'storage_parents' => array('extra', 'other_option'),
+      ),
+      'other_text' => array(
+        'form_parents' => array('items', 'options', 'option_settings', 'other_text'),
+        'storage_parents' => array('extra', 'other_text'),
       ),
     ),
   );
@@ -830,7 +848,8 @@ function _form_builder_webform_form_builder_properties_select() {
 function _form_builder_webform_form_builder_load_select($form_element) {
   // Properties that are only used by Form Builder and not in the normal form.
   $form_element['#key_type_toggled'] = !empty($form_element['#webform_component']['extra']['custom_keys']);
-
+  $form_element['#other_option'] = !empty($form_element['#webform_component']['extra']['other_option']);
+  $form_element['#other_text'] = !empty($form_element['#webform_component']['extra']['other_text']) ? $form_element['#webform_component']['extra']['other_text'] : '';
   return $form_element;
 }
 
@@ -863,7 +882,8 @@ function _form_builder_webform_form_builder_save_select($component, $form_elemen
   $component['extra']['items'] = _form_builder_serialize_select($form_element['#options']);
   $component['extra']['multiple'] = $form_element['#form_builder']['element_type'] == 'checkboxes';
   $component['extra']['aslist'] = $form_element['#form_builder']['element_type'] == 'select';
-
+  $component['extra']['other_option'] = !empty($form_element['#other_option']);
+  $component['extra']['other_text'] = !empty($form_element['#other_text']) ? $form_element['#other_text'] : '';
   return $component;
 }
 

@@ -112,13 +112,14 @@ function _form_builder_add_element($form_type, $form_id, $element_type, $element
     if (isset($_REQUEST['js'])) {
       $element = form_builder_cache_field_load($form_type, $form_id, $element_id);
       $form_cache = form_builder_cache_load($form_type, $form_id);
+      $form = drupal_get_form('form_builder_positions', $form_cache, $form_type, $form_id);
 
       $data = array(
         'formType' => $form_type,
         'formId' => $form_id,
         'elementId' => $element_id,
         'html' => form_builder_field_render($form_type, $form_id, $element_id),
-        'positionForm' => drupal_render(drupal_get_form('form_builder_positions', $form_cache, $form_type, $form_id)),
+        'positionForm' => drupal_render($form),
       );
 
       form_builder_json_output($data);
@@ -372,7 +373,7 @@ function theme_form_builder_wrapper($variables) {
 
   $output .= '<div id="form-builder">';
   if (isset($element['#title'])) {
-    $output .= '<h3 class="form-builder-title">' . check_plain($element['#title']) . '</h3>';
+    $output .= '<h3 class="form-builder-title">' . $element['#title'] . '</h3>';
   }
 
   // Add the contents of the form and close the wrappers.

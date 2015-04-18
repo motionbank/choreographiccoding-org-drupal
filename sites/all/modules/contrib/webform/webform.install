@@ -561,7 +561,7 @@ function webform_schema() {
     'indexes' => array(
       'nid' => array('nid'),
       'sid_nid' => array('sid', 'nid'),
-      'data' => array(array('data', 64)),
+      // For all but MS SQL Server databases, 64-character index is created on the data column after the schema is installed.
     ),
   );
 
@@ -666,6 +666,12 @@ function webform_install() {
     // Disable comments by default on Webform nodes.
     variable_set('comment_webform', '0');
   }
+
+  // Note: MS SQL Server does not support size-limited indexes and the column
+  // type (text) is too big to fit inside index size limits.
+  if (!db_index_exists('webform_submitted_data', 'data') && db_driver() != 'sqlsrv') {
+    db_add_index('webform_submitted_data', 'data', array(array('data', 64)));
+  }
 }
 
 /**
@@ -673,28 +679,30 @@ function webform_install() {
  */
 function webform_uninstall() {
   // Unset webform variables.
-  variable_del('webform_node_types_primary');
-  variable_del('webform_disabled_components');
+  variable_del('webform_blocks');
   variable_del('webform_tracking_mode');
-  variable_del('webform_default_from_address');
+  variable_del('webform_allowed_tags');
+  variable_del('webform_email_address_format');
   variable_del('webform_default_from_name');
+  variable_del('webform_default_from_address');
   variable_del('webform_default_subject');
+  variable_del('webform_email_replyto');
+  variable_del('webform_email_html_capable');
   variable_del('webform_default_format');
   variable_del('webform_format_override');
-  variable_del('webform_csv_delimiter');
-  variable_del('webform_allowed_tags');
-  variable_del('webform_blocks');
-  variable_del('webform_search_index');
-  variable_del('webform_email_address_format');
-  variable_del('webform_export_format');
-  variable_del('webform_submission_access_control');
-  variable_del('webform_update_batch_size');
   variable_del('webform_email_select_max');
-  variable_del('webform_tracking_mode');
+  variable_del('webform_node_types_primary');
+  variable_del('webform_export_format');
+  variable_del('webform_csv_delimiter');
+  variable_del('webform_export_wordwrap');
+  variable_del('webform_excel_legacy_exporter');
   variable_del('webform_progressbar_style');
   variable_del('webform_progressbar_label_first');
   variable_del('webform_progressbar_label_confirmation');
-  variable_del('webform_excel_legacy_exporter');
+  variable_del('webform_table');
+  variable_del('webform_submission_access_control');
+  variable_del('webform_update_batch_size');
+  variable_del('webform_disabled_components');
 
   foreach (node_type_get_names() as $type => $name) {
     variable_del('webform_node_' . $type);
@@ -710,6 +718,23 @@ function webform_uninstall() {
   // Delete uploaded files.
   $filepath = file_build_uri('webform');
   file_unmanaged_delete_recursive($filepath);
+
+  // Delete the content type "webform" if:
+  //   a) there are no existing nodes of type webform and
+  //   b) no additional fields have been defined for node type webform, beyond
+  //      the default body field.
+  $query = new EntityFieldQuery();
+  $results = $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'webform')
+    ->range(0,1)
+    ->execute();
+  $instances = field_info_instances('node', 'webform');
+  unset($instances['body']);
+  if (!$results && !$instances) {
+    node_type_delete('webform');
+    drupal_flush_all_caches();
+  }
+
 }
 
 /**
@@ -1017,7 +1042,7 @@ function webform_update_7319(&$sandbox) {
   }
 
   // Process all files attached to a given revision during the same batch.
-  $limit = variable_get('webform_update_batch_size', 100);
+  $limit = webform_variable_get('webform_update_batch_size');
   $files = db_select('file_managed', 'f')
     ->fields('f')
     ->condition('uri', '%' . db_like('://webform/') . '%', 'LIKE')
@@ -1128,7 +1153,7 @@ function webform_update_7401(&$sandbox) {
     '[current-user:$1]',
   );
 
-  $limit = variable_get('webform_update_batch_size', 100);
+  $limit = webform_variable_get('webform_update_batch_size');
   $processed_count = _webform_update_7401_batch($sandbox, $patterns, $replacements, $dpatterns, $dreplacements, $limit);
 
   // If less than limit was processed, the update process is finished.
@@ -1393,7 +1418,7 @@ function webform_update_7403(&$sandbox) {
       ->fetchField();
   }
 
-  $limit = variable_get('webform_update_batch_size', 100);
+  $limit = webform_variable_get('webform_update_batch_size');
   $webforms = db_select('webform', 'w')
     ->fields('w')
     ->condition('nid', $sandbox['last_nid_processed'], '>')
@@ -1657,7 +1682,7 @@ function webform_update_7411(&$sandbox) {
     '[submission:values$1]',
   );
 
-  $limit = variable_get('webform_update_batch_size', 100);
+  $limit = webform_variable_get('webform_update_batch_size');
   $processed_count = _webform_update_7401_batch($sandbox, $patterns, $replacements, $dpatterns, $dreplacements, $limit);
 
   // If less than limit was processed, the update process is finished.
@@ -1898,7 +1923,11 @@ function webform_update_7418() {
  * Add an index on submitted data.
  */
 function webform_update_7419() {
-  db_add_index('webform_submitted_data', 'data', array(array('data', 64)));
+  // Note: MS SQL Server does not support size-limited indexes and the column
+  // type (text) is too big to fit inside index size limits.
+  if (!db_index_exists('webform_submitted_data', 'data') && db_driver() != 'sqlsrv') {
+    db_add_index('webform_submitted_data', 'data', array(array('data', 64)));
+  }
 }
 
 /**
@@ -1906,5 +1935,28 @@ function webform_update_7419() {
  */
 function webform_update_7420() {
   user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('edit webform components'));
+}
+
+/**
+ * Set the administrator option for an HTML-capable mail system to the current automatically-detected option.
+ */
+function webform_update_7421() {
+  $capable = array_reduce(array('mandrill', 'mimemail', 'htmlmail'),
+                          function($carry, $module) { return $carry || module_exists($module); },
+                          FALSE);
+  variable_set('webform_email_html_capable', $capable);
+  return $capable
+            ? t('An HTML-capable module is installed. The option to send HTML e-mail is enabled. ')
+            : t('No commonly-known HTML capable module is installed. The option to send HTML e-mail is disabled.');
+}
+
+/**
+ * Remove the administrator option "Include webform forms in search index" and rely on the Search Index view mode instead.
+ */
+function webform_update_7422() {
+  variable_del('webform_search_index');
+  return module_exists('search')
+          ? t('Webform forms will now be included in the search index only if the Webform "field" is displayed in the "Search index" view mode.')
+          : NULL;
 }
 

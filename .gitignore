@@ -5,5 +5,4 @@ sites/*/settings*.php
 sites/*/files
 sites/*/private
 .DS_Store
-.sass-cahce
 .sass-cache
